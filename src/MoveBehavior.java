@@ -39,15 +39,7 @@ public class MoveBehavior extends OneShotBehaviour
 	}
 	
     public void action()
-    {
-    	
-    	/*
-    		try {
-    			ACLMessage msg = myAgent.receive();
-    			if (msg != null)
-    			{
-        			pheromones = (double[][]) msg.getContentObject();
-    			}*/
+    {	
     			antAgent = ((Ant)myAgent);
     			antInfo = antAgent.getAntInfo();
     			//if (DEBUG) System.out.println("[DEBUG] AntInfo getted=");
@@ -119,13 +111,8 @@ public class MoveBehavior extends OneShotBehaviour
 	    		fillAntColonyObj();
 	    		this.antInfo.setActualCity(this.ActualCity);
 	    		System.out.println("Ant new city = "+ this.ActualCity);
-
-	    		
-    		}/* catch (UnreadableException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}    */	
-   
+	    		antAgent.sendAntInfo(antInfo);
+    		}
     
     private void fillAntColonyObj()
     {

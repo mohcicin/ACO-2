@@ -1,3 +1,4 @@
+
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
@@ -27,24 +28,29 @@ public class ReceiveMessagesBehavior extends CyclicBehaviour{
           Object content = null;
 		try {
 			content = msg.getContentObject();
-			System.out.println("Message received!");
 
 			switch (msg.getPerformative()) 
 	          {
 	          
 	          case (ACLMessage.INFORM):
 	              if (content instanceof AntColonyInfo)
+	              {
 	            	  antColonyInfo = (AntColonyInfo)content;
-	         //         myAgent.addBehaviour(new UpdateBehavior((AntColonyInfo)content));
+	            	  System.out.println("AntColonyInfo Object received!");
+	              }
+	            
 	              else if (content instanceof AntInfo)
+	              {
 	            	  antInfo = (AntInfo)content;
+	            	  System.out.println("AntInfo Object received!");
+	              }
 	              else 
 	            	  System.out.print("Unable to parse message");
 	          break;
 	          }
 			if (antColonyInfo != null && antInfo != null)
 			{
-				myAgent.addBehaviour(new UpdateBehavior(antColonyInfo));
+				myAgent.addBehaviour(new UpdateBehavior(antColonyInfo,antInfo));
 			}
 		} catch (UnreadableException e) {
 			// TODO Auto-generated catch block

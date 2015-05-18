@@ -98,7 +98,7 @@ public class Ant extends Agent
 			 msg.addReceiver(new AID("MyAgent", AID.ISLOCALNAME));
 			 try {
 				msg.setContentObject(this.antInfo);
-				System.out.println("Ant Colony Info sended Correctly");
+				System.out.println("Ant Info sended Correctly");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

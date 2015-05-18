@@ -1,4 +1,4 @@
-
+package Update;
 import java.text.DecimalFormat;
 
 import jade.core.behaviours.OneShotBehaviour;
@@ -15,7 +15,7 @@ public class UpdateBehavior extends OneShotBehaviour{
 									{false,false,true,true,true},
 									{true,true,false,false,false},
 									{true,true,true,false,true},
-{true,true,true,true,false}}*/; 
+									{true,true,true,true,false}}*/; 
 	double[][] actualPheromones/*={{0,0,6,15,0},
 								{0,0,15,5,16},
 								{20,16,0,0,0},
@@ -26,9 +26,8 @@ public class UpdateBehavior extends OneShotBehaviour{
 							  {20,16,0,0,0},
 							  {30,25,10,0,4},
 							  {23,3,22,10,0}}*/;
-	
 	static final boolean DEBUG = false;
-	public UpdateBehavior(AntColonyInfo antColInfo,AntInfo antInfo)
+	public UpdateBehavior(AntColonyInfo antColInfo)
 	{
 		System.out.println("Initializing the update behavior..");
 		this.citiesRelations = antColInfo.getCitiesRelations();
