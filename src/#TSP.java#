@@ -1,0 +1,20 @@
+
+public class Ant extends Agent
+{
+	
+    private int [][] cityDistance;
+    private int [][] pathPhero;
+    private int actualcity;
+    
+    public TSP()
+    {
+	
+	
+    }
+
+
+    
+	
+	
+
+}
