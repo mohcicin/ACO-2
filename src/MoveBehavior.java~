@@ -1,7 +1,0 @@
-import jade.core.Agent;
-import jade.core.AID;
-
-public class MoveBehavior extends Behavior
-{
-
-}
